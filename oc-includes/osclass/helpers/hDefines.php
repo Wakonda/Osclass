@@ -1206,11 +1206,18 @@
      *
      * @return boolean
      */
+    function osc_is_user_page() {
+        return osc_get_osclass_location() == "user";
+    }    
+
+    /**
+     * Get if the user is on 404 error page
+     *
+     * @return boolean
+     */
     function osc_is_404() {
         return ( Rewrite::newInstance()->get_location() === 'error' );
     }
-
-
 
     /**
      * Get location
@@ -1229,7 +1236,6 @@
     function osc_get_osclass_section() {
         return Rewrite::newInstance()->get_section();
     }
-
 
     /**
      * Check is an admin is a super admin or only a moderator

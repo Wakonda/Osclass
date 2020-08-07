@@ -33,42 +33,42 @@
             return true;
         }
 
-        static public function your_name() {
+        static public function your_name($class = []) {
             if( Session::newInstance()->_getForm("yourName") != "" ) {
                 $name = Session::newInstance()->_getForm("yourName");
-                parent::generic_input_text("yourName", $name, null, false);
+                parent::generic_input_text("yourName", $name, null, false, true, $class);
             } else {
-                parent::generic_input_text("yourName", osc_logged_user_name(), null, false);
+                parent::generic_input_text("yourName", osc_logged_user_name(), null, false, true, $class);
             }
             return true;
         }
 
-        static public function your_email() {
+        static public function your_email($class = []) {
              if( Session::newInstance()->_getForm("yourEmail") != "" ) {
                 $email = Session::newInstance()->_getForm("yourEmail");
-                parent::generic_input_text("yourEmail", $email, null, false);
+                parent::generic_input_text("yourEmail", $email, null, false, true, $class);
             } else {
-                parent::generic_input_text("yourEmail", osc_logged_user_email(), null, false);
+                parent::generic_input_text("yourEmail", osc_logged_user_email(), null, false, true, $class);
             }
             return true;
         }
 
-        static public function your_phone_number() {
+        static public function your_phone_number($class = []) {
             if( Session::newInstance()->_getForm("phoneNumber") != "" ) {
                 $phoneNumber = Session::newInstance()->_getForm("phoneNumber");
-                parent::generic_input_text("phoneNumber", $phoneNumber, null, false);
+                parent::generic_input_text("phoneNumber", $phoneNumber, null, false, true, $class);
             } else {
-                parent::generic_input_text("phoneNumber", osc_logged_user_phone(), null, false);
+                parent::generic_input_text("phoneNumber", osc_logged_user_phone(), null, false, true, $class);
             }
             return true;
         }
 
-        static public function the_subject() {
+        static public function the_subject($class = []) {
             if( Session::newInstance()->_getForm("subject") != "" ) {
                 $subject = Session::newInstance()->_getForm("subject");
-                parent::generic_input_text("subject", $subject, null, false);
+                parent::generic_input_text("subject", $subject, null, false, true, $class);
             } else {
-                parent::generic_input_text("subject", "", null, false);
+                parent::generic_input_text("subject", "", null, false, true, $class);
             }
             return true;
         }
@@ -115,23 +115,17 @@
             },
             errorLabelContainer: "#error_list",
             wrapper: "li",
-            invalidHandler: function(form, validator) {
-                $('html,body').animate({ scrollTop: $('h1').offset().top }, { duration: 250, easing: 'swing'});
-            },
             submitHandler: function(form){
                 $('button[type=submit], input[type=submit]').attr('disabled', 'disabled');
                 form.submit();
-            }
+            },
+            invalidHandler: function(form, validator) {
+                $('html,body').animate({ scrollTop: $('#contact').offset().top }, { duration: 250, easing: 'swing'});
+            },
         });
     });
 </script>
 <?php
         }
-
-
-
-
-
     }
-
 ?>

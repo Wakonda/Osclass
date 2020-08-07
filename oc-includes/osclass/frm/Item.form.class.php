@@ -390,9 +390,9 @@
             return true;
         }
 
-        static public function title_input($name, $locale = 'en_US', $value = '')
+        static public function title_input($name, $locale = 'en_US', $value = '', $class = [])
         {
-            parent::generic_input_text($name . '[' . $locale . ']', $value);
+            parent::generic_input_text($name . '[' . $locale . ']', $value, null, false, true, $class);
             return true;
         }
 
@@ -438,16 +438,16 @@
              if($num_locales>1) { echo '</div>'; };
         }
 
-        static public function price_input_text($item = null)
+        static public function price_input_text($item = null, $class = [])
         {
             if($item==null) { $item = osc_item(); };
             if( Session::newInstance()->_getForm('price') != "" ) {
                 $item['i_price'] = Session::newInstance()->_getForm('price');
             }
-            parent::generic_input_text('price', (isset($item['i_price'])) ? osc_prepare_price($item['i_price']) : null);
+            parent::generic_input_text('price', (isset($item['i_price'])) ? osc_prepare_price($item['i_price']) : null, null, false, true, $class);
         }
 
-        static public function currency_select($currencies = null, $item = null) {
+        static public function currency_select($currencies = null, $item = null, $class = []) {
             if( $currencies == null ) { $currencies = osc_get_currencies(); }
             if( $item == null) { $item = osc_item(); }
             if( Session::newInstance()->_getForm('currency') != '' ) {
@@ -557,42 +557,42 @@
             }
         }
 
-        static public function region_text($item = null) {
+        static public function region_text($item = null, $class = []) {
             if($item==null) { $item = osc_item(); };
             if( Session::newInstance()->_getForm('region') != "" ) {
                 $item['s_region'] = Session::newInstance()->_getForm('region');
             }
-            parent::generic_input_text('region', (isset($item['s_region'])) ? $item['s_region'] : null, false, false);
+            parent::generic_input_text('region', (isset($item['s_region'])) ? $item['s_region'] : null, false, false, true, $class);
             parent::generic_input_hidden('regionId', (isset($item['fk_i_region_id']) && $item['fk_i_region_id']!=null)?$item['fk_i_region_id']:'');
             return true;
         }
 
-        static public function city_text($item = null) {
+        static public function city_text($item = null, $class = []) {
             if($item==null) { $item = osc_item(); };
             if( Session::newInstance()->_getForm('city') != "" ) {
                 $item['s_city'] = Session::newInstance()->_getForm('city');
             }
-            parent::generic_input_text('city', (isset($item['s_city'])) ? $item['s_city'] : null, false, false);
+            parent::generic_input_text('city', (isset($item['s_city'])) ? $item['s_city'] : null, false, false, true, $class);
             parent::generic_input_hidden('cityId', (isset($item['fk_i_city_id']) && $item['fk_i_city_id']!=null)?$item['fk_i_city_id']:'');
             return true;
         }
 
-        static public function city_area_text($item = null) {
+        static public function city_area_text($item = null, $class = []) {
             if($item==null) { $item = osc_item(); };
             if( Session::newInstance()->_getForm('cityArea') != "" ) {
                 $item['s_city_area'] = Session::newInstance()->_getForm('cityArea');
             }
-            parent::generic_input_text('cityArea', (isset($item['s_city_area'])) ? $item['s_city_area'] : null);
+            parent::generic_input_text('cityArea', (isset($item['s_city_area'])) ? $item['s_city_area'] : null, null, false, true, $class);
             parent::generic_input_hidden('cityAreaId', (isset($item['fk_i_city_area_id']) && $item['fk_i_city_area_id']!=null)?$item['fk_i_city_area_id']:'');
             return true;
         }
 
-        static public function address_text($item = null) {
+        static public function address_text($item = null, $class = []) {
             if($item==null) { $item = osc_item(); };
             if( Session::newInstance()->_getForm('address') != "" ) {
                 $item['s_address'] = Session::newInstance()->_getForm('address');
             }
-            parent::generic_input_text('address', (isset($item['s_address'])) ? $item['s_address'] : null);
+            parent::generic_input_text('address', (isset($item['s_address'])) ? $item['s_address'] : null, null, false, true, $class);
             return true;
         }
 
@@ -605,21 +605,21 @@
             return true;
         }
 
-        static public function contact_name_text($item = null) {
+        static public function contact_name_text($item = null, $class = []) {
             if($item==null) { $item = osc_item(); };
             if( Session::newInstance()->_getForm('contactName') != "" ) {
                 $item['s_contact_name'] = Session::newInstance()->_getForm('contactName');
             }
-            parent::generic_input_text('contactName', (isset($item['s_contact_name'])) ? $item['s_contact_name'] : null);
+            parent::generic_input_text('contactName', (isset($item['s_contact_name'])) ? $item['s_contact_name'] : null, null, false, true, $class);
             return true;
         }
 
-        static public function contact_email_text($item = null) {
+        static public function contact_email_text($item = null, $class = []) {
             if($item==null) { $item = osc_item(); };
             if( Session::newInstance()->_getForm('contactEmail') != "" ) {
                 $item['s_contact_email'] = Session::newInstance()->_getForm('contactEmail');
             }
-            parent::generic_input_text('contactEmail', (isset($item['s_contact_email'])) ? $item['s_contact_email'] : null);
+            parent::generic_input_text('contactEmail', (isset($item['s_contact_email'])) ? $item['s_contact_email'] : null, null, false, true, $class);
             return true;
         }
         // NOTHING TO DO

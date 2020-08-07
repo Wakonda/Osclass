@@ -32,7 +32,7 @@
      * @return string
      */
     function osc_add_flash_message($msg, $section = 'pubMessages') {
-        Session::newInstance()->_setMessage($section, $msg, 'error');
+        Session::newInstance()->_setMessage($section, $msg, 'danger');
     }
 
     /**
@@ -43,7 +43,7 @@
      * @return string
      */
     function osc_add_flash_ok_message($msg, $section = 'pubMessages') {
-        Session::newInstance()->_setMessage($section, $msg, 'ok');
+        Session::newInstance()->_setMessage($section, $msg, 'success');
     }
 
     /**
@@ -54,7 +54,7 @@
      * @return string
      */
     function osc_add_flash_error_message($msg, $section = 'pubMessages') {
-        Session::newInstance()->_setMessage($section, $msg, 'error');
+        Session::newInstance()->_setMessage($section, $msg, 'danger');
     }
 
     /**
@@ -96,7 +96,7 @@
                 echo '<div id="flash_js"></div>';
         
                 if (isset($message['msg']) && $message['msg'] != '') {
-                    echo '<div id="' . $id . '" class="' . strtolower($class) . ' ' . strtolower($class) . '-' .$message['type'] . '"><a class="btn ico btn-mini ico-close">x</a>';
+                    echo '<div id="' . $id . '" class="' . strtolower($class) . ' ' . strtolower($class) . '-' .$message['type'] . '"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
                     echo osc_apply_filter('flash_message_text', $message['msg']);
                     echo '</div>';
                 } else if($message!='') {
@@ -125,5 +125,4 @@
 
         return $message;
     }
-
 ?>

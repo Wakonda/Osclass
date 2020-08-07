@@ -22,52 +22,52 @@
             parent::generic_input_hidden("id", (isset($user["pk_i_id"]) ? $user['pk_i_id'] : '') );
         }
 
-        static public function name_text($user = null) {
-            parent::generic_input_text("s_name", isset($user['s_name'])? $user['s_name'] : '', null, false);
+        static public function name_text($user = null, $class = []) {
+            parent::generic_input_text("s_name", isset($user['s_name'])? $user['s_name'] : '', null, false, true, $class);
         }
 
-        static public function username_text($user = null) {
-            parent::generic_input_text("s_username", isset($user['s_username'])? $user['s_username'] : '', null, false);
+        static public function username_text($user = null, $class = []) {
+            parent::generic_input_text("s_username", isset($user['s_username'])? $user['s_username'] : '', null, false, true, $class);
         }
 
-        static public function email_login_text($user = null) {
-            parent::generic_input_text("email", isset($user['s_email'])? $user['s_email'] : '', null, false);
+        static public function email_login_text($user = null, $class = []) {
+            parent::generic_input_text("email", isset($user['s_email'])? $user['s_email'] : '', null, false, true, $class);
         }
 
-        static public function password_login_text($user = null) {
-            parent::generic_password("password", '', null, false);
+        static public function password_login_text($user = null, $class = []) {
+            parent::generic_password("password", '', null, false, $class);
         }
 
         static public function rememberme_login_checkbox($user = null) {
             parent::generic_input_checkbox("remember", '1', false);
         }
 
-        static public function old_password_text($user = null) {
-            parent::generic_password("old_password", '', null, false);
+        static public function old_password_text($user = null, $class = []) {
+            parent::generic_password("old_password", '', null, false, $class);
         }
 
-        static public function password_text($user = null) {
-            parent::generic_password("s_password", '', null, false);
+        static public function password_text($user = null, $class = []) {
+            parent::generic_password("s_password", '', null, false, $class);
         }
 
-        static public function check_password_text($user = null) {
-            parent::generic_password("s_password2", '', null, false);
+        static public function check_password_text($user = null, $class = []) {
+            parent::generic_password("s_password2", '', null, false, $class);
         }
 
-        static public function email_text($user = null) {
-            parent::generic_input_text("s_email", isset($user['s_email'])? $user['s_email'] : '', null, false);
+        static public function email_text($user = null, $class = []) {
+            parent::generic_input_text("s_email", isset($user['s_email'])? $user['s_email'] : '', null, false, true, $class);
         }
 
-        static public function website_text($user = null) {
-            parent::generic_input_text("s_website", isset($user['s_website'])? $user['s_website'] : '', null, false);
+        static public function website_text($user = null, $class = []) {
+            parent::generic_input_text("s_website", isset($user['s_website'])? $user['s_website'] : '', null, false, true, $class);
         }
 
-        static public function mobile_text($user = null) {
-            parent::generic_input_text("s_phone_mobile", isset($user['s_phone_mobile'])? $user['s_phone_mobile'] : '', null, false);
+        static public function mobile_text($user = null, $class = []) {
+            parent::generic_input_text("s_phone_mobile", isset($user['s_phone_mobile'])? $user['s_phone_mobile'] : '', null, false, true, $class);
         }
 
-        static public function phone_land_text($user = null) {
-            parent::generic_input_text("s_phone_land", isset($user['s_phone_land'])? $user['s_phone_land'] : '', null, false);
+        static public function phone_land_text($user = null, $class = []) {
+            parent::generic_input_text("s_phone_land", isset($user['s_phone_land'])? $user['s_phone_land'] : '', null, false, true, $class);
         }
 
         static public function info_textarea($name, $locale = 'en_US', $value = '') {
@@ -127,20 +127,20 @@
             }
         }
 
-        static public function city_text($user = null) {
+        static public function city_text($user = null, $class = []) {
             parent::generic_input_text('city', (isset($user['s_city'])) ? $user['s_city'] : null);
         }
 
-        static public function city_area_text($user = null) {
-            parent::generic_input_text('cityArea', (isset($user['s_city_area'])) ? $user['s_city_area'] : null);
+        static public function city_area_text($user = null, $class = []) {
+            parent::generic_input_text('cityArea', (isset($user['s_city_area'])) ? $user['s_city_area'] : null, null, false, true, $class);
         }
 
-        static public function address_text($user = null) {
-            parent::generic_input_text('address', (isset($user['s_address'])) ? $user['s_address'] : null);
+        static public function address_text($user = null, $class = []) {
+            parent::generic_input_text('address', (isset($user['s_address'])) ? $user['s_address'] : null, null, false, true, $class);
         }
 
-        static public function zip_text($user = null) {
-            parent::generic_input_text('zip', (isset($user['s_zip'])) ? $user['s_zip'] : null);
+        static public function zip_text($user = null, $class = []) {
+            parent::generic_input_text('zip', (isset($user['s_zip'])) ? $user['s_zip'] : null, null, false, true, $class);
         }
 
         static public function is_company_select($user = null, $user_label = null, $company_label = null) {

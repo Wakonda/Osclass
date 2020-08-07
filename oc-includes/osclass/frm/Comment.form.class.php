@@ -18,7 +18,6 @@
 
     class CommentForm extends Form
     {
-
         static public function primary_input_hidden($comment = null)
         {
             $commentId = null;
@@ -33,7 +32,7 @@
             }
         }
 
-        static public function title_input_text($comment = null)
+        static public function title_input_text($comment = null, $class = [])
         {
             $commentTitle = '';
             if( isset($comment['s_title']) ) {
@@ -42,10 +41,10 @@
             if(Session::newInstance()->_getForm('commentTitle') != '') {
                 $commentTitle = Session::newInstance()->_getForm('commentTitle');
             }
-            parent::generic_input_text("title", $commentTitle, null, false);
+            parent::generic_input_text("title", $commentTitle, null, false, true, $class);
         }
 
-        static public function author_input_text($comment = null)
+        static public function author_input_text($comment = null, $class = [])
         {
             $commentAuthorName = '';
             if( isset($comment['s_author_name']) ) {
@@ -54,10 +53,10 @@
             if(Session::newInstance()->_getForm('commentAuthorName') != '') {
                 $commentAuthorName = Session::newInstance()->_getForm('commentAuthorName');
             }
-            parent::generic_input_text("authorName", $commentAuthorName, null, false);
+            parent::generic_input_text("authorName", $commentAuthorName, null, false, true, $class);
         }
 
-        static public function email_input_text($comment = null)
+        static public function email_input_text($comment = null, $class = [])
         {
             $commentAuthorEmail = '';
             if( isset($comment['s_author_email']) ) {
@@ -66,7 +65,7 @@
             if(Session::newInstance()->_getForm('commentAuthorEmail') != '') {
                 $commentAuthorEmail = Session::newInstance()->_getForm('commentAuthorEmail');
             }
-            parent::generic_input_text("authorEmail", $commentAuthorEmail, null, false);
+            parent::generic_input_text("authorEmail", $commentAuthorEmail, null, false, true, $class);
         }
 
         static public function body_input_textarea($comment = null)
@@ -132,8 +131,5 @@
 </script>
 <?php
         }
-
-
     }
-
 ?>

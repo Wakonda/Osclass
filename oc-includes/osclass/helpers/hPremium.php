@@ -40,6 +40,8 @@
             $mSearch = Search::newInstance();
             View::newInstance()->_exportVariableToView('search', $mSearch);
         }
+		
+		osc_run_hook('search_conditions', Params::getParamsAsArray());
 
         // juanramon: it should be fixed, little hack to get alerts work in search layout
         $mSearch->reconnect();

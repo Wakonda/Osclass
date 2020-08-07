@@ -28,20 +28,22 @@
             echo '</select>';
         }
 
-        static protected function generic_input_text($name, $value, $maxLength = null, $readOnly = false, $autocomplete = true) {
+        static protected function generic_input_text($name, $value, $maxLength = null, $readOnly = false, $autocomplete = true, $class = []) {
             $name = osc_esc_html($name);
             echo '<input id="' . preg_replace('|([^_a-zA-Z0-9-]+)|', '', $name) . '" type="text" name="' . $name . '" value="' . osc_esc_html(htmlentities($value, ENT_COMPAT, "UTF-8")) . '"';
             if (isset($maxLength)) echo ' maxlength="' . osc_esc_html($maxLength) . '"';
             if (!$autocomplete) echo ' autocomplete="off"';
             if ($readOnly) echo ' disabled="disabled" readonly="readonly"';
+            if (!empty($class)) echo ' class="'.implode(" ", $class).'"';
             echo ' />';
         }
 
-        static protected function generic_password($name, $value, $maxLength = null, $readOnly = false) {
+        static protected function generic_password($name, $value, $maxLength = null, $readOnly = false, $class = []) {
             $name = osc_esc_html($name);
             echo '<input id="' . preg_replace('|([^_a-zA-Z0-9-]+)|', '', $name) . '" type="password" name="' . $name . '" value="' . osc_esc_html(htmlentities($value, ENT_COMPAT, "UTF-8")) . '"';
             if (isset($maxLength)) echo ' maxlength="' . osc_esc_html($maxLength) . '"';
             if ($readOnly) echo ' disabled="disabled" readonly="readonly"';
+            if (!empty($class)) echo ' class="'.implode(" ", $class).'"';
             echo ' autocomplete="off" />';
         }
 

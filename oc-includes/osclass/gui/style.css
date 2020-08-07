@@ -562,7 +562,6 @@ div.uploader input { opacity: 0; filter: alpha(opacity:0); position: absolute; t
     right: 0px;
     background-color: #bc0202;
     width: 100%;
-    height:20px;
     text-align: center;
     color: #fefefe;
 }
