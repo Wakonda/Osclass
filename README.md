@@ -6,7 +6,7 @@
 and open script to create your advertisement or listings site. Best features: Plugins,
 themes, multi-language, CAPTCHA, dashboard, SEO friendly.
 
-![Preview of Osclass][preview]
+This fork is currently used by a website: [Activité-Paranormale](http://classifiedads.activite-paranormale.com/). Of course, you can use it for your own project. We've made fixes and will continue to make fixes since OSClass is now discontinued.
 
 ## Project info
 
